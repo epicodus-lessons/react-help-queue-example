@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/epicodus-lessons/react-help-queue-example/issues"
   },
-  "homepage": "https://github.com/epicodus-lessons/react-help-queue-example#readme"
+  "homepage": "https://github.com/epicodus-lessons/react-help-queue-example#readme",
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
 }
