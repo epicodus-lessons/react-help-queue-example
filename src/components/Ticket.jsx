@@ -1,6 +1,6 @@
 import React from "react";
 
-function Ticket(){
+function Ticket(props){
   return (
     <div>
       <h3>{props.location} - {props.names}</h3>
