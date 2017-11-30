@@ -3,8 +3,8 @@ import React from "react";
 function Ticket(){
   return (
     <div>
-      <h3>3A - Thato & Haley</h3>
-      <p><em>Firebase entries not saving!</em></p>
+      <h3>{props.location} - {props.names}</h3>
+      <p><em>{props.issue}</em></p>
       <hr/>
     </div>
   );
