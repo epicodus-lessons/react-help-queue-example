@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Error404(){
+function Error404(props){
   return (
     <div>
-      <h2>The page you're looking for doesn't exist!</h2>
+      <h2>The page {props.location.pathname} doesn't exist!</h2>
       <h3>Would you like to return <Link to="/">home</Link> instead?</h3>
     </div>
   );
