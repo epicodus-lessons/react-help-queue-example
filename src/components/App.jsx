@@ -8,8 +8,8 @@ function App(){
     <div>
       <Header/>
       <Switch>
-        <Route exact path="/" component={TicketList} />
-        <Route path="/newticket" component={NewTicketForm} />
+        <Route exact path='/' component={TicketList} />
+        <Route path='/newticket' component={NewTicketForm} />
       </Switch>
     </div>
   );
