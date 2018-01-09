@@ -9,6 +9,7 @@ function App(){
       <Header/>
       <Switch>
         <Route exact path="/" component={TicketList} />
+        <Route path="/newticket" component={NewTicketForm} />
       </Switch>
     </div>
   );
