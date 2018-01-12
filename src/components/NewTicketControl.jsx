@@ -13,6 +13,7 @@ class NewTicketControl extends React.Component {
     return (
       <div>
         <p>This is the NewTicketControl component!</p>
+        <strong onClick={this.handleClick}>Click me to change my state!</strong>
       </div>
     );
   }
