@@ -10,7 +10,11 @@ class NewTicketControl extends React.Component {
   }
 
   render(){
-    // We'll add to this a little later.
+    return (
+      <div>
+        <p>This is the NewTicketControl component!</p>
+      </div>
+    );
   }
 }
 
