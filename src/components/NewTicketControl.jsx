@@ -1,5 +1,6 @@
 import React from 'react';
 import ConfirmationQuestions from './ConfirmationQuestions';
+import NewTicketForm from './NewTicketForm';
 
 class NewTicketControl extends React.Component {
 
@@ -17,8 +18,16 @@ class NewTicketControl extends React.Component {
   // }
 
   render(){
+    let currentlyVisibleContent = null;
+    if (this.state.formVisibleOnPage){
+      currentlyVisibleContent = <NewTicketForm />;
+    } else {
+      currentlyVisibleContent = <ConfirmationQuestions />;
+    }
     return (
-      <ConfirmationQuestions />
+      <div>
+        {currentlyVisibleContent}
+      </div>
     );
   }
 }
