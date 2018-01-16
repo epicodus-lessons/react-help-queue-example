@@ -7,9 +7,9 @@ function NewTicketForm(){
 
   function handleNewTicketFormSubmission(event) {
     event.preventDefault();
-    console.log(_names);
-    console.log(_location);
-    console.log(_issue);
+    console.log(_names.value);
+    console.log(_location.value);
+    console.log(_issue.value);
   }
 
   return (
