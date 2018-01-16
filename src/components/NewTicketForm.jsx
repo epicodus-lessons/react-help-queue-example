@@ -3,7 +3,7 @@ import React from 'react';
 function NewTicketForm(){
   return (
     <div>
-      <form>
+      <form onSubmit={handleNewTicketFormSubmission}>
         <input
           type='text'
           id='names'
