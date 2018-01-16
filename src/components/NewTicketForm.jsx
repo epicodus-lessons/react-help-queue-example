@@ -1,6 +1,11 @@
 import React from 'react';
 
 function NewTicketForm(){
+
+  function handleNewTicketFormSubmission(event) {
+    event.preventDefault();
+  }
+
   return (
     <div>
       <form onSubmit={handleNewTicketFormSubmission}>
