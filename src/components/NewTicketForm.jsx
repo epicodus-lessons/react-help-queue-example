@@ -10,9 +10,9 @@ function NewTicketForm(){
     console.log(_names.value);
     console.log(_location.value);
     console.log(_issue.value);
-    _names.value = ''
-    _location.value = ''
-    _issue.value = ''
+    _names.value = '';
+    _location.value = '';
+    _issue.value = '';
   }
 
   return (
