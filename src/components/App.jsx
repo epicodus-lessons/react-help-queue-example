@@ -10,8 +10,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterTicketList: [];
+      masterTicketList: []
     };
+  }
+
+  handleNewTicketFormSubmission(newTicket){
+    var newMasterTicketList = this.state.masterTicketList.slice();
+    newMasterTicketList.push(newTicket);
+    this.setState({masterTicketList: newMasterTicketList});
   }
 
   render(){
