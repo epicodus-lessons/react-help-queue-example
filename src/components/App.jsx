@@ -12,10 +12,10 @@ class App extends React.Component {
     this.state = {
       masterTicketList: []
     };
-    this.handleNewTicketFormSubmission = this.handleNewTicketFormSubmission.bind(this);
+    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
   }
 
-  handleNewTicketFormSubmission(newTicket){
+  handleAddingNewTicketToList(newTicket){
     var newMasterTicketList = this.state.masterTicketList.slice();
     newMasterTicketList.push(newTicket);
     this.setState({masterTicketList: newMasterTicketList});
@@ -27,7 +27,7 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' component={TicketList} />
-          <Route path='/newticket' render={()=><NewTicketControl onNewTicketFormSubmission={this.handleNewTicketFormSubmission} />} />
+          <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
           <Route component={Error404} />
         </Switch>
       </div>
