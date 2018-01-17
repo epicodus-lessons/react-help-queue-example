@@ -27,7 +27,7 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' component={TicketList} />
-          <Route path='/newticket' component={NewTicketControl} />
+          <Route path='/newticket' render={()=><NewTicketControl onNewTicketFormSubmission={this.handleNewTicketFormSubmission} />} />
           <Route component={Error404} />
         </Switch>
       </div>
