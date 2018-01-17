@@ -12,6 +12,7 @@ class App extends React.Component {
     this.state = {
       masterTicketList: []
     };
+    this.handleNewTicketFormSubmission = this.handleNewTicketFormSubmission.bind(this);
   }
 
   handleNewTicketFormSubmission(newTicket){
