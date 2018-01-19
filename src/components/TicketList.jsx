@@ -10,7 +10,7 @@ function TicketList(props){
         <Ticket names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
-          timeOpened={ticket.timeOpened}
+          timeOpen={ticket.timeOpen}
           key={ticket.id}/>
       )}
     </div>
