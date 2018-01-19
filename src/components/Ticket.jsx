@@ -6,25 +6,22 @@ function Ticket(props){
   return (
     <div>
       <h3>{props.location} - {props.names}</h3>
-      <h4>{displayTimeOpen(props.timeOpened)}</h4>
+      <h4>{displayTimeOpen(props.timeOpen)} ago</h4>
       <p><em>{props.issue}</em></p>
       <hr/>
     </div>
   );
 }
 
-function displayTimeOpen(timeOpened) {
-  let now = new Moment(new Date());
-  let then = new Moment(timeOpened);
-  let stringTime = then.from(now, true);
-  return stringTime;
+function displayTimeOpen(timeOpen) {
+  return timeOpen.from(new Moment(), true);
 }
 
 Ticket.propTypes = {
   names: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   issue: PropTypes.string,
-  timeOpened: PropTypes.instanceOf(Date).isRequired
+  timeOpen: PropTypes.instanceOf(Moment).isRequired
 };
 
 export default Ticket;
