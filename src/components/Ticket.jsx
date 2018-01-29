@@ -17,6 +17,7 @@ Ticket.propTypes = {
   location: PropTypes.string.isRequired,
   issue: PropTypes.string,
   formattedWaitTime: PropTypes.string.isRequired,
+  currentRouterPath: PropTypes.string
 };
 
 export default Ticket;
