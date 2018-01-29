@@ -11,7 +11,7 @@ function Ticket(props){
     </div>;
   if (props.currentRouterPath === '/admin'){
     return (
-      <div onClick={() => {alert('hey, you just clicked the ticket belonging to ' + props.names)}}>
+      <div onClick={() => {alert('hey, you just clicked the ticket belonging to ' + props.names);}}>
         {ticketInformation}
       </div>
     );
