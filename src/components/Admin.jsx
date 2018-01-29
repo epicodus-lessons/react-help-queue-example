@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TicketList from './TicketList';
 
 function Admin(props){
   return (
     <div>
-      <h2>This is the admin page!</h2>
+      <h2>Admin</h2>
+      <TicketList ticketList={props.ticketList} />
     </div>
   );
 }
