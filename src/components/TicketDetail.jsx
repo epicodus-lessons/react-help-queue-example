@@ -1,9 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function TicketDetail(){
+function TicketDetail(props){
   return (
-    <h2>Ticket Details will be visible here soon!</h2>
+    <div>
+      <hr/>
+      <h1>{props.selectedTicket.names} - {props.selectedTicket.location}</h1>
+      <h2>Submitted {props.selectedTicket.formattedWaitTime}</h2>
+      <h4><em>{props.selectedTicket.issue}</em></h4>
+      <hr/>
+    </div>
   );
 }
+
+TicketDetail.propTypes = {
+  selectedTicket: PropTypes.object
+};
 
 export default TicketDetail;
