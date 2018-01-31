@@ -20,7 +20,8 @@ function TicketList(props){
 
 TicketList.propTypes = {
   ticketList: PropTypes.array,
-  currentRouterPath: PropTypes.string
+  currentRouterPath: PropTypes.string,
+  onTicketSelection: PropTypes.func
 };
 
 export default TicketList;

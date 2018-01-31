@@ -10,7 +10,8 @@ function Admin(props){
       <TicketDetail />
       <TicketList
         ticketList={props.ticketList}
-        currentRouterPath={props.currentRouterPath}/>
+        currentRouterPath={props.currentRouterPath}
+        onTicketSelection={props.onTicketSelection}/>
     </div>
   );
 }
