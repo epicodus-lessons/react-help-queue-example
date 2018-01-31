@@ -58,7 +58,8 @@ class App extends React.Component {
           <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
           <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
           <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname}
-            onTicketSelection={this.handleChangingSelectedTicket}/>} />
+          onTicketSelection={this.handleChangingSelectedTicket}
+          selectedTicket={this.state.selectedTicket}/>} />
           <Route component={Error404} />
         </Switch>
       </div>
