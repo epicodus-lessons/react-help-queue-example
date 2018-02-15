@@ -11,7 +11,16 @@ function NewTicketForm(props){
   let _issue = null;
 
   function handleNewTicketFormSubmission(event) {
+    const { dispatch } = props;
     event.preventDefault();
+    const action = {
+      type: 'ADD_TICKET',
+      id: null,
+      names: _names.value,
+      location: _location.value,
+      issue: _issue.value,
+      timeOpen: new Moment()
+    };
     props.onNewTicketCreation({names: _names.value, location: _location.value, issue: _issue.value, id: v4(), timeOpen: new Moment()});
     _names.value = '';
     _location.value = '';
