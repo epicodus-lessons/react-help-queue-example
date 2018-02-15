@@ -5,8 +5,8 @@ describe('ticketListReducer', () => {
   let action;
   const sampleTicketData = {
     names : 'Ryan & Aimen',
-    location : "4b",
-    issue : "Jest is being a diva and won't work with Webpack!",
+    location : '4b',
+    issue : 'Jest is being a diva and won\'t work with Webpack!',
     timeOpen : 1500000000000,
     id: 0
   };
