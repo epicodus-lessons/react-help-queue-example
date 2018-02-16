@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 function Admin(props){
   let optionalSelectedTicketContent = null;
-  if (props.selectedTicket != null){
+  if (props.selectedTicket.length > 0){
     optionalSelectedTicketContent =  <TicketDetail selectedTicket={props.ticketList[props.selectedTicket]}/>;
   }
   return (
@@ -30,7 +30,8 @@ Admin.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    selectedTicket: state.selectedTicket
+    selectedTicket: state.selectedTicket,
+    ticketList: state.masterTicketList
   };
 };
 
