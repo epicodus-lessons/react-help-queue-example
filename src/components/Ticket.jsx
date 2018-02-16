@@ -9,7 +9,7 @@ function Ticket(props){
     const action = {
       type: 'SELECT_TICKET',
       ticketId: ticketId
-    }
+    };
     dispatch(action);
   }
 
