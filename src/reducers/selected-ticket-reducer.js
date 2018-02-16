@@ -1,3 +1,8 @@
 export default (state = {}, action) => {
-  return state;
+  switch (action.type) {
+  case 'SELECT_TICKET':
+    return action.ticketId;
+  default:
+    return state;
+  }
 };
