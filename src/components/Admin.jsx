@@ -28,4 +28,10 @@ Admin.propTypes = {
   selectedTicket: PropTypes.string
 };
 
-export default connect()(Admin);
+const mapStateToProps = state => {
+  return {
+    selectedTicket: state.selectedTicket
+  };
+};
+
+export default connect(mapStateToProps)(Admin);
