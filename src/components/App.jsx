@@ -13,6 +13,7 @@ class App extends React.Component {
     this.state = {
       masterTicketList: []
     };
+    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
   }
 
   componentDidMount() {
@@ -34,18 +35,26 @@ class App extends React.Component {
     this.setState({masterTicketList: newMasterTicketList});
   }
 
+  handleAddingNewTicketToList(newTicket){
+    var newMasterTicketList = this.state.masterTicketList.slice();
+    newTicket.formattedWaitTime = (newTicket.timeOpen).fromNow(true);
+    newMasterTicketList.push(newTicket);
+    this.setState({masterTicketList: newMasterTicketList});
+  }
+
   render(){
     return (
       <div>
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
-          <Route path='/newticket' render={()=><NewTicketControl />} />
+          <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
           <Route component={Error404} />
         </Switch>
       </div>
     );
   }
+
 }
 
 export default App;
