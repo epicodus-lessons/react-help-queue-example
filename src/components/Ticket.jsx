@@ -40,7 +40,6 @@ Ticket.propTypes = {
   issue: PropTypes.string,
   formattedWaitTime: PropTypes.string.isRequired,
   currentRouterPath: PropTypes.string,
-  onTicketSelection: PropTypes.func,
   ticketId: PropTypes.string.isRequired
 };
 
