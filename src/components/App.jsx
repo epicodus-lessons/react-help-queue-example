@@ -13,7 +13,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterTicketList: {},
       selectedTicket: null
     };
     this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
@@ -31,11 +30,11 @@ class App extends React.Component {
   }
 
   updateTicketElapsedWaitTime() {
-    var newMasterTicketList = Object.assign({}, this.state.masterTicketList);
-    Object.keys(newMasterTicketList).forEach(ticketId => {
-      newMasterTicketList[ticketId].formattedWaitTime = (newMasterTicketList[ticketId].timeOpen).fromNow(true);
-    });
-    this.setState({masterTicketList: newMasterTicketList});
+    // var newMasterTicketList = Object.assign({}, this.state.masterTicketList);
+    // Object.keys(newMasterTicketList).forEach(ticketId => {
+    //   newMasterTicketList[ticketId].formattedWaitTime = (newMasterTicketList[ticketId].timeOpen).fromNow(true);
+    // });
+    // this.setState({masterTicketList: newMasterTicketList});
   }
 
   handleChangingSelectedTicket(ticketId){
