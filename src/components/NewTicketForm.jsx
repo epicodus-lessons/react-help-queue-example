@@ -5,7 +5,6 @@ import Moment from 'moment';
 import { connect } from 'react-redux';
 
 function NewTicketForm(props){
-  console.log(props);
   let _names = null;
   let _location = null;
   let _issue = null;
