@@ -16,14 +16,11 @@ export default (state = {}, action) => {
     return newState;
 
   case 'UPDATE_TIME':
-    if (state[id]){
-      const ticket = state[id];
-      const newTicket = Object.assign({}, ticket, { formattedWaitTime });
-      newState = Object.assign({}, state, {
-        [id]: newTicket
-      });
-      return newState;
-    }
+    const newTicket = Object.assign({}, state[id], {formattedWaitTime});
+    newState = Object.assign({}, state, {
+      [id]: newTicket
+    });
+    return newState;
 
   default:
     return state;
