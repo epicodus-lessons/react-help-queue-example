@@ -1,6 +1,6 @@
 import ticketListReducer from './../../src/reducers/ticket-list-reducer';
 import Moment from 'moment';
-import c from './../constants';
+import c from './../../src/constants';
 
 describe('ticketListReducer', () => {
 
