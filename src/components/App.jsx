@@ -35,7 +35,7 @@ class App extends React.Component {
     const { types } = constants;
     Object.keys(this.props.masterTicketList).map(ticketId => {
       const ticket = this.props.masterTicketList[ticketId];
-      const newFormattedWaitTime = ticket.timeOpen.fromNow(true);
+      const newFormattedWaitTime = new Moment(ticket.timeOpen).from(new Moment());
       const action = {
         type: types.UPDATE_TIME,
         id: ticketId,
