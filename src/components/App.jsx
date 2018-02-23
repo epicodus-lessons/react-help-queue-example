@@ -8,7 +8,8 @@ import Moment from 'moment';
 import Admin from './Admin';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import c from './../constants';
+import constants from './../constants';
+const { c } = constants;
 
 class App extends React.Component {
 

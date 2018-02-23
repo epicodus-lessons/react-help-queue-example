@@ -1,9 +1,9 @@
 import ticketListReducer from './../../src/reducers/ticket-list-reducer';
 import Moment from 'moment';
-import c from './../../src/constants';
+import constants from './../../src/constants';
+const { c } = constants;
 
 describe('ticketListReducer', () => {
-
   let action;
   const sampleTicketData = {
     names : 'Ryan & Aimen',
