@@ -5,6 +5,11 @@ import { HashRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers/index';
+import constants from './../constants';
+const { firebaseConfig } = constants;
+import firebase from 'firebase';
+
+firebase.initializeApp(firebaseConfig);
 
 const store = createStore(rootReducer);
 
