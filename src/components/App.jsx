@@ -15,8 +15,8 @@ class App extends React.Component {
 
   componentWillMount() {
     const { dispatch } = this.props;
-    const { subscribeToTickets } = actions;
-    dispatch(subscribeToTickets());
+    const { watchFirebaseTicketsRef } = actions;
+    dispatch(watchFirebaseTicketsRef());
   }
 
   componentDidMount() {

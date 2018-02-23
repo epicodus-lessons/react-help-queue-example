@@ -23,8 +23,16 @@ function receiveTicket(ticketFromFirebase) {
   };
 }
 
-export function subscribeToTickets() {
+// function receiveDeletedTicket(ticketId) {
+//   return {
+//     type: types.RECEIVE_TICKET,
+//     ticketId: ticketId
+//   };
+// }
+
+export function watchFirebaseTicketsRef() {
   return function(dispatch) {
+
     tickets.on('child_added', data => {
       const newTicket = Object.assign(
         {},
@@ -36,5 +44,14 @@ export function subscribeToTickets() {
       );
       dispatch(receiveTicket(newTicket))
     });
+
+
+  // THIS CODE WORKS BUT IS NOT CURRENTLY NECESSARY
+
+  //   tickets.on('child_removed', data => {
+  //     console.log('removed');
+  //     console.log(data.getKey());
+  //     dispatch(recieveDeletedTicket(data.getKey()));
+  //   });
   }
 }
