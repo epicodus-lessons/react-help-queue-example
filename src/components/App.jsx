@@ -8,14 +8,21 @@ import Moment from 'moment';
 import Admin from './Admin';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import c from './../constants';
+import constants from './../constants';
+import * as actions from './../actions';
 
 class App extends React.Component {
+
+  componentWillMount() {
+    const { dispatch } = this.props;
+    const { subscribeToTickets } = actions;
+    dispatch(subscribeToTickets());
+  }
 
   componentDidMount() {
     this.waitTimeUpdateTimer = setInterval(() =>
       this.updateTicketElapsedWaitTime(),
-    60000
+      60000
     );
   }
 
@@ -25,11 +32,12 @@ class App extends React.Component {
 
   updateTicketElapsedWaitTime() {
     const { dispatch } = this.props;
+    const { types } = constants;
     Object.keys(this.props.masterTicketList).map(ticketId => {
       const ticket = this.props.masterTicketList[ticketId];
       const newFormattedWaitTime = ticket.timeOpen.fromNow(true);
       const action = {
-        type: c.UPDATE_TIME,
+        type: types.UPDATE_TIME,
         id: ticketId,
         formattedWaitTime: newFormattedWaitTime
       };

@@ -15,6 +15,12 @@ export function addTicket(_names, _location, _issue) {
   })
 }
 
+export function subscribeToTickets() {
+  return {
+    type: types.SUBSCRIBE_TO_TICKETS
+  };
+}
+
 function receiveTicket(ticketFromFirebase) {
   return {
     type: types.RECEIVE_TICKET,
@@ -22,7 +28,7 @@ function receiveTicket(ticketFromFirebase) {
   };
 }
 
-export function subscribeToTickets() {
+export function getFirebaseTickets() {
   return function(dispatch) {
     tickets.on('child_added', data => {
       console.log('in subscribe:');
