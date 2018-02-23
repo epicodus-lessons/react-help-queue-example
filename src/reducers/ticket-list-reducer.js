@@ -1,6 +1,6 @@
 import constants from './../constants';
 const { types } = constants;
-import { subscribeToTickets } from './../actions';
+import { getFirebaseTickets } from './../actions';
 
 export default (state = {}, action) => {
   let newState;
@@ -8,9 +8,9 @@ export default (state = {}, action) => {
 
 
   switch (action.type) {
-    case 'SUBSCRIBE_TO_TICKETS':
-      newState = state;
-      subscribeToTickets();
+    case types.RECEIVE_TICKET:
+      newState = Object.assign({}, state);
+      newState[action.ticket.id] = action.ticket;
       return newState;
     case types.ADD_TICKET:
       newState = Object.assign({}, state, {

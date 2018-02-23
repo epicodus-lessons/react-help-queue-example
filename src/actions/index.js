@@ -1,6 +1,7 @@
 import constants from './../constants';
 const { firebaseConfig, types } = constants;
 import firebase from 'firebase';
+import Moment from 'moment';
 
 
 firebase.initializeApp(firebaseConfig);
@@ -10,15 +11,9 @@ export function addTicket(_names, _location, _issue) {
   return () => tickets.push({
     names: _names,
     location: _location,
-    description: _issue,
-    timeOpened: new Date().getTime()
+    issue: _issue,
+    timeOpen: new Date().getTime()
   })
-}
-
-export function subscribeToTickets() {
-  return {
-    type: types.SUBSCRIBE_TO_TICKETS
-  };
 }
 
 function receiveTicket(ticketFromFirebase) {
@@ -28,12 +23,18 @@ function receiveTicket(ticketFromFirebase) {
   };
 }
 
-export function getFirebaseTickets() {
+export function subscribeToTickets() {
   return function(dispatch) {
     tickets.on('child_added', data => {
-      console.log('in subscribe:');
-      console.log(data.val());
-      dispatch(receiveTicket(data.val()))
+      const newTicket = Object.assign(
+        {},
+        data.val(),
+        {
+          id : data.getKey(),
+          formattedWaitTime: new Moment(data.val().timeOpen).from(new Moment())
+        }
+      );
+      dispatch(receiveTicket(newTicket))
     });
   }
 }
