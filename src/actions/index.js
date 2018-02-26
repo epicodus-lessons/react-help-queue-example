@@ -2,8 +2,6 @@ import constants from './../constants';
 const { firebaseConfig } = constants;
 import Firebase from 'firebase';
 
-console.log(firebase);
-
 firebase.initializeApp(firebaseConfig);
 const tickets = firebase.database().ref('tickets');
 

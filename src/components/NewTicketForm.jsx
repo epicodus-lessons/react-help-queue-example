@@ -1,9 +1,5 @@
 import React from 'react';
-import Moment from 'moment';
 import { connect } from 'react-redux';
-import { v4 } from 'uuid';
-import constants from './../constants';
-const { c } = constants;
 import { addTicket } from './../actions';
 
 function NewTicketForm(props){
@@ -14,7 +10,7 @@ function NewTicketForm(props){
   function handleNewTicketFormSubmission(event) {
     const { dispatch } = props;
     event.preventDefault();
-    dispatch(addTicket(_names.value, _location.value_, _issue.value));
+    dispatch(addTicket(_names.value, _location.value, _issue.value));
     _names.value = '';
     _location.value = '';
     _issue.value = '';
